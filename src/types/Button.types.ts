@@ -1,21 +1,13 @@
-enum LoaderEnum {
-  Spinner,
-  Dots,
+export enum LoaderEnum {
+  Spinner = 'spinner',
+  Dots = 'dots',
 }
 export type Loader = LoaderEnum.Spinner | LoaderEnum.Dots;
 
-export type Options = {
-  shadow?: boolean;
-  shadowColor?: string;
-  color?: string;
-  loaderType?: Loader;
+export enum ButtonEnum {
+  Primary = 'primary',
+  Secondary = 'secondary',
+  Underline = 'underline',
 }
 
-enum ButtonEnum {
-  Primary,
-  Secondary,
-  Warning,
-  Underline,
-}
-
-export type Button = ButtonEnum.Primary | ButtonEnum.Secondary | ButtonEnum.Warning | ButtonEnum.Underline;
+export type Button = ButtonEnum.Primary | ButtonEnum.Secondary | ButtonEnum.Underline;

@@ -1,54 +1,73 @@
-// TODO:
-// here implement the structure of a button component you wish to provide to the user
-// add different variants like - primary, secondary, disabled, loading
-// add props - type (variant), custom color, click handler, state for disabling
-//
-//
-
-// const options = {
-//   shadow: true,
-//   shadowColor: '',
-//   color: '',
-//   loaderType: 'spinner' | 'dots'
-// }
-
 // type
 // 'primary', 'secondary', 'warning', 'underline'
 
-// loading - boolean prop
-
-// disable - boolean prop
-
-// click handler
-
-// children - assuming this is a text and/or an icon
-//
-
 import React from "react";
-import { Button as ButtonType, Options } from "../types/Button.types.ts";
+import classNames from "classnames";
+import Spinner from "./misc/loaders/Spinner.tsx";
+import Dots from "./misc/loaders/Dots.tsx";
+import { type Button as ButtonType, type Loader, LoaderEnum} from "../types/Button.types.ts";
 
-interface IButtonProps {
-  type: ButtonType;
+interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant: ButtonType;
   clickHandler: () => void;
   children: React.ReactNode | string;
-  options?: Options;
   loading?: boolean;
-  disable?: boolean;
+  loader?: {
+    type?: Loader;
+    size?: number;
+    mainColor?: string;
+    subColor?: string;
+  };
+  disabled?: boolean;
 }
 
 export const Button = ({
-  type,
+  variant,
   clickHandler,
   children,
-  options,
   loading,
-  disable,
+  loader,
+  disabled,
+  ...rest
 }: IButtonProps) => {
+  const classes = classNames(
+    'btn',
+    `btn-${variant}`,
+    loading && 'btn-loading',
+    disabled && 'btn-disabled',
+  );
+
+  const handleClick = () => {
+    if (disabled) return;
+    clickHandler();
+  };
+
+  const renderButtonContents = () => {
+    if (loading) {
+      if (loader && loader.type) {
+        switch (loader.type) {
+          case LoaderEnum.Spinner: {
+            return <Spinner size={loader.size} mainColor={loader.mainColor} subColor={loader.subColor} />;
+          }
+          case LoaderEnum.Dots: {
+            return <Dots size={loader.size} mainColor={loader.mainColor} subColor={loader.subColor} />;
+          }
+          default: {
+            return <Spinner />;
+          }
+        }
+      }
+    }
+
+    return children;
+  };
+
   return (
     <button
-      className={`btn btn-${type}`}
-      onClick={clickHandler}
-      disabled={Boolean(disable)}
-    ></button>
+      className={classes}
+      onClick={handleClick}
+      disabled={Boolean(disabled)}
+      {...rest}
+    >{renderButtonContents()}</button>
   );
 };
