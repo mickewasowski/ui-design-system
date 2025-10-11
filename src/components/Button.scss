@@ -49,3 +49,17 @@
         color: var(--copper);
     }
 }
+
+.btn-disabled {
+    background-color: var(--grayish-white);
+    color: var(--grayish-white);
+    border: 1px solid var(--gray);
+
+    &:hover {
+        cursor: not-allowed;
+    }
+}
+
+.btn-loading {
+   opacity: 0.8; 
+}
