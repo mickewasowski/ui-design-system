@@ -1,0 +1,11 @@
+:root {
+    --white: rgb(255, 255, 255);
+    --grayish-white: rgb(180, 180, 180);
+    --blue: rgb(0, 90, 205);
+    --blueish-white: rgb(188, 206, 245);
+    --green: rgb(0, 206, 17);
+    --navy: rgb(25, 41, 70);
+    --copper: rgb(206, 89, 0);
+    --dark-purple: rgb(38, 6, 142);
+    --pastel-light-blue: rgb(63, 136, 152);
+}
