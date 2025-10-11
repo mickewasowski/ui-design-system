@@ -1,0 +1,51 @@
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: calc(50px / 5) solid #dddddd; 
+    border-top-color: black;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.dots-loader {
+    display: flex;
+    gap: 5px;
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        animation: jump 0.6s infinite alternate;
+
+        &:nth-child(1) {
+            background-color: darkgray;
+        }
+
+        &:nth-child(2) {
+            background-color: black;
+            animation-delay: 0.2s;
+        }
+
+        &:nth-child(3) {
+            background-color: darkgray;
+            animation-delay: 0.4s;
+        }
+    }
+}
+
+@keyframes jump {
+    to {
+        transform: translateY(-5%);
+    }
+}
