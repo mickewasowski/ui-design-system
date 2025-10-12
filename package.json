@@ -1,19 +1,24 @@
 {
   "name": "ui-design-system",
   "version": "0.1.0",
-  "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    }
+      "style": "./dist/ui-design-system.css",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    },
+    "./dist/ui-design-system.css": "./dist/ui-design-system.css"
   },
+  "style": "dist/ui-design-system.css",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": ["*.css,", "*.scss"],
   "scripts": {
-    "dev": "tsup src/index.ts --watch",
-    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "build": "npm run clean && vite build",
     "clean": "rm -rf dist"
   },
   "peerDependencies": {
@@ -23,8 +28,12 @@
   "devDependencies": {
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
-    "tsup": "^8.0.0",
-    "typescript": "~5.9.3"
+    "@vitejs/plugin-react": "^5.0.4",
+    "path": "^0.12.7",
+    "sass": "^1.93.2",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.9",
+    "vite-plugin-dts": "^4.5.4"
   },
   "dependencies": {
     "classnames": "^2.5.1"

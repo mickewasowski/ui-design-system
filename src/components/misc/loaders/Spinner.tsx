@@ -8,7 +8,9 @@ interface ISpinnerProps {
 
 function Spinner({size = 50, mainColor, subColor}: ISpinnerProps) {
     return <div className="loading-spinner" style={{
-        borderColor: subColor,
+        borderLeftColor: subColor,
+        borderRightColor: subColor,
+        borderBottomColor: subColor,
         borderTopColor: mainColor,
         width: `${size}px`,
         height: `${size}px`,

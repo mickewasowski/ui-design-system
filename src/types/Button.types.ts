@@ -10,4 +10,4 @@ export enum ButtonEnum {
   Underline = 'underline',
 }
 
-export type Button = ButtonEnum.Primary | ButtonEnum.Secondary | ButtonEnum.Underline;
+export type ButtonType = ButtonEnum.Primary | ButtonEnum.Secondary | ButtonEnum.Underline;

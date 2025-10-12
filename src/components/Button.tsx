@@ -5,7 +5,7 @@ import React from "react";
 import classNames from "classnames";
 import Spinner from "./misc/loaders/Spinner.tsx";
 import Dots from "./misc/loaders/Dots.tsx";
-import { type Button as ButtonType, type Loader, LoaderEnum} from "../types/Button.types.ts";
+import { type ButtonType, type Loader, LoaderEnum} from "../types/Button.types.ts";
 
 interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant: ButtonType;
