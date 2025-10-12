@@ -52,14 +52,22 @@
 
 .btn-disabled {
     background-color: var(--grayish-white);
-    color: var(--grayish-white);
+    color: var(--white);
     border: 1px solid var(--gray);
 
     &:hover {
         cursor: not-allowed;
+        pointer-events: none;
     }
 }
 
 .btn-loading {
    opacity: 0.8; 
+   padding: unset;
+
+    &:hover {
+        cursor: not-allowed;
+        background-color: initial;
+        border-color: initial;
+    }
 }
