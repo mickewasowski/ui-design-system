@@ -9,8 +9,8 @@ import { type Button as ButtonType, type Loader, LoaderEnum} from "../types/Butt
 
 interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant: ButtonType;
-  clickHandler: () => void;
   children: React.ReactNode | string;
+  additionalClasses?: string;
   loading?: boolean;
   loader?: {
     type?: Loader;
@@ -19,15 +19,17 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     subColor?: string;
   };
   disabled?: boolean;
+  clickHandler: () => void;
 }
 
 export const Button = ({
   variant,
-  clickHandler,
   children,
+  additionalClasses,
   loading,
   loader,
   disabled,
+  clickHandler,
   ...rest
 }: IButtonProps) => {
   const classes = classNames(
@@ -35,6 +37,7 @@ export const Button = ({
     `btn-${variant}`,
     loading && 'btn-loading',
     disabled && 'btn-disabled',
+    additionalClasses,
   );
 
   const handleClick = () => {
