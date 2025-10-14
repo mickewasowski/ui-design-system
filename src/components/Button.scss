@@ -19,6 +19,7 @@
 
 .btn-primary {
     background-color: var(--blue);
+    border: 1px solid var(--blue);
     color: var(--white);
 
     &:hover {

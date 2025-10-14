@@ -6,7 +6,7 @@ import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), libInjectCss(),  dts({ insertTypesEntry: true, include: ["lib"] })],
+  plugins: [react(), libInjectCss(),  dts({ insertTypesEntry: true, copyDtsFiles: true, include: ['src/']})],
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),

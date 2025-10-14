@@ -9,11 +9,12 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.es.js"
+      "import": "./dist/index.es.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "scripts": {
-    "build": "npm run clean && vite build",
+    "build": "npm run clean && vite build && tsc --emitDeclarationOnly --declaration --declarationMap --outDir dist",
     "clean": "rm -rf dist"
   },
   "peerDependencies": {
