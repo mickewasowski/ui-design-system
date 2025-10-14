@@ -54,7 +54,7 @@ function Input({
     <div className={wrapperClasses}>
       <p>{errorText}</p>
       <input className={inputClasses} value={value} type={type} onChange={changeHandler} {...attibutes} />
-      <label className={labelClasses} name={name}>{text}</label>
+      <label className={labelClasses} htmlFor={name}>{text}</label>
     </div>
   );
 }
