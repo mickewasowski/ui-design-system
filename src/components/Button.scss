@@ -29,6 +29,7 @@
     }
 }
 
+
 .btn-secondary {
     background-color: var(--white);
     text-transform: capitalize;
@@ -58,7 +59,6 @@
 
     &:hover {
         cursor: not-allowed;
-        pointer-events: none;
     }
 }
 
@@ -68,7 +68,19 @@
 
     &:hover {
         cursor: not-allowed;
-        background-color: initial;
-        border-color: initial;
+    }
+}
+
+.btn-primary.btn-loading {
+    &:hover {
+        background-color: var(--blue);
+        border: 1px solid var(--blue);
+        color: var(--white);
+    }
+}
+
+.btn-secondary.btn-loading {
+    &:hover {
+        background-color: var(--white);
     }
 }

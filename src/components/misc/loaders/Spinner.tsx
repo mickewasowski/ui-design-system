@@ -6,7 +6,7 @@ interface ISpinnerProps {
     subColor?: string;
 }
 
-function Spinner({size = 50, mainColor, subColor}: ISpinnerProps) {
+function Spinner({size = 20, mainColor, subColor}: ISpinnerProps) {
     return <div className="loading-spinner" style={{
         borderLeftColor: subColor,
         borderRightColor: subColor,

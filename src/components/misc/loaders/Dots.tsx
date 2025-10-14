@@ -9,6 +9,7 @@ interface IDotsProps {
 function Dots({size = 10, mainColor = 'black', subColor = 'darkgray'}: IDotsProps) {
     const dotStyle = {
         width: `${size}px`,
+        height: `${size}px`,
     };
 
     return <div className="dots-loader" style={{gap: `${size / 5}px`}}>

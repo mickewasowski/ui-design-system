@@ -58,6 +58,8 @@ export const Button = ({
           }
         }
       }
+
+      return <Spinner />;
     }
 
     return children;
