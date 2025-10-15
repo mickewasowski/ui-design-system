@@ -38,12 +38,11 @@ function Input({
   },
 }: IInputProps) {
   const { type, value, changeHandler, attributes = {} } = input;
+  const { onFocus: userOnFocus, onBlur: userOnBlur, ...restAttributes } = attributes;
   const { text, name } = label;
   const { show: showError, text: errorText } = error;
 
   const [focused, setFocused] = useState(false);
-
-  const { onFocus: userOnFocus, onBlur: userOnBlur, ...restAttributes } = attributes;
 
   const handleFocus = (event: React.FocusEvent<HTMLInputElement>) => {
     setFocused(true);
