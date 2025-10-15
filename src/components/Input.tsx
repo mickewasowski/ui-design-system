@@ -5,13 +5,15 @@
 // accept custom color
 
 import classNames from "classnames";
+import { useState } from "react";
+import "./Input.scss";
 
 interface IInputProps {
   input: {
     type: string;
     value: string | number;
-    changeHandler: () => void;
-    attibutes?: React.InputHTMLAttributes<HTMLInputElement>;
+    changeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    attributes?: React.InputHTMLAttributes<HTMLInputElement>;
   };
   label: {
     text: string;
@@ -19,10 +21,10 @@ interface IInputProps {
   };
   borderColor?: string;
   textColor?: string;
-  inactive: boolean;
-  focused: boolean;
-  error: boolean;
-  errorText: string;
+  error?: {
+    show: boolean;
+    text: string;
+  };
 }
 
 function Input({
@@ -30,31 +32,55 @@ function Input({
   label,
   borderColor,
   textColor,
-  inactive,
-  focused,
-  error,
-  errorText,
+  error = {
+    show: false,
+    text: "",
+  },
 }: IInputProps) {
-  const {type, value, changeHandler, attibutes} = input;
-  const {text, name} = label;
+  const { type, value, changeHandler, attributes } = input;
+  const { text, name } = label;
+  const { show: showError, text: errorText } = error;
 
-    const wrapperClasses = classNames({
+  const [focused, setFocused] = useState(false);
+  const handleFocus = () => setFocused(true);
+  const handleBlur = () => setFocused(false);
 
-    });
+  const wrapperClasses = classNames(
+    "input-label-wrapper",
+    focused && "focus-wrapper",
+    showError && "error-wrapper",
+  );
 
-  const inputClasses = classNames({
-
-  });
-
-  const labelClasses = classNames({
-
-  });
+  const hasValue = Boolean(
+    (typeof value === "string" && value.length > 0) ||
+    (typeof value === "number" && !isNaN(value)),
+  );
+  const labelClasses = classNames(
+    hasValue && "label-at-top",
+    focused && "label-at-top-focused",
+  );
 
   return (
-    <div className={wrapperClasses}>
-      <p>{errorText}</p>
-      <input className={inputClasses} value={value} type={type} onChange={changeHandler} {...attibutes} />
-      <label className={labelClasses} htmlFor={name}>{text}</label>
+    <div className={wrapperClasses} style={{ borderColor: borderColor }}>
+      <p
+        className="error-text"
+        style={{ display: showError ? "block" : "none" }}
+      >
+        {errorText}
+      </p>
+      <input
+        id={name}
+        value={value}
+        type={type}
+        onChange={changeHandler}
+        data-color={textColor}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        {...attributes}
+      />
+      <label className={labelClasses} htmlFor={name} data-color={textColor}>
+        {text}
+      </label>
     </div>
   );
 }
