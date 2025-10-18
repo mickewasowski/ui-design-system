@@ -1,9 +1,3 @@
-// TODO:
-// implement an input field with a label
-// it should have states like inactive, focused, error
-// accept value and change handler
-// accept custom color
-
 import classNames from "classnames";
 import { useState } from "react";
 import "./Input.scss";
@@ -90,7 +84,6 @@ export const Input = ({
         value={value}
         type={type}
         onChange={changeHandler}
-        data-color={textColor}
         onFocus={handleFocus}
         onBlur={handleBlur}
         {...restAttributes}

@@ -17,7 +17,7 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     subColor?: string;
   };
   disabled?: boolean;
-  clickHandler: () => void;
+  clickHandler: (e: any) => void;
 }
 
 export const Button = ({
@@ -38,9 +38,9 @@ export const Button = ({
     additionalClasses,
   );
 
-  const handleClick = () => {
+  const handleClick = (e: any) => {
     if (disabled) return;
-    clickHandler();
+    clickHandler(e);
   };
 
   const renderButtonContents = () => {

@@ -1,86 +1,86 @@
 .btn {
-    border: none;
-    background-color: transparent;
-    border-radius: 5px;
-    min-width: 50px;
-    min-height: 30px;
-    padding: 10px 20px;
-    letter-spacing: 1px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 300;
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+  min-width: 50px;
+  min-height: 30px;
+  padding: 10px 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
 
-    &:hover {
-        cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .btn-primary {
-    background-color: var(--btn-primary-blue);
-    border: 1px solid var(--btn-primary-blue);
-    color: var(--white);
+  background-color: var(--btn-primary-blue);
+  border: 1px solid var(--btn-primary-blue);
+  color: var(--white);
 
-    &:hover {
-        background-color: var(--btn-primary-hover);
-        color: var(--btn-primary-blue);
-        border: 1px solid var(--btn-primary-blue);
-    }
+  &:hover {
+    background-color: var(--btn-primary-hover);
+    color: var(--btn-primary-blue);
+    border: 1px solid var(--btn-primary-blue);
+  }
 }
 
-
 .btn-secondary {
-    background-color: var(--btn-secondary-bg);
-    text-transform: capitalize;
-    border: 1px solid var(--btn-secondary-border);
-    color: var(--btn-secondary-border);
+  background-color: var(--btn-secondary-bg);
+  text-transform: capitalize;
+  border: 1px solid var(--btn-secondary-border);
+  color: var(--btn-secondary-border);
 
-    &:hover {
-        background-color: var(--btn-secondary-hover-bg);
-    }
+  &:hover {
+    background-color: var(--btn-secondary-hover-bg);
+  }
 }
 
 .btn-underline {
-    border-radius: 0;
-    border-bottom: 1px solid var(--btn-underline-border);
-    color: var(--btn-underline-border);
+  border-radius: 0;
+  border-bottom: 1px solid var(--btn-underline-border);
+  color: var(--btn-underline-border);
 
-    &:hover {
-        border-color: var(--btn-underline-hover);
-        color: var(--btn-underline-hover);
-    }
+  &:hover {
+    border-color: var(--btn-underline-hover);
+    color: var(--btn-underline-hover);
+  }
 }
 
 .btn-disabled {
-    background-color: var(--btn-disabled-bg);
-    color: var(--btn-disabled-text);
-    border: 1px solid var(--btn-disabled-border);
+  background-color: var(--btn-disabled-bg);
+  color: var(--btn-disabled-text);
+  border: 1px solid var(--btn-disabled-border);
+  pointer-events: none;
 
-    &:hover {
-        cursor: not-allowed;
-    }
+  &:hover {
+    cursor: not-allowed;
+  }
 }
 
 .btn-loading {
-   opacity: 0.8; 
-   padding: unset;
+  opacity: 0.8;
+  padding: unset;
 
-    &:hover {
-        cursor: not-allowed;
-    }
+  &:hover {
+    cursor: not-allowed;
+  }
 }
 
 .btn-primary.btn-loading {
-    &:hover {
-        background-color: var(--btn-primary-blue);
-        border: 1px solid var(--btn-primary-blue);
-        color: var(--btn-primary-hover);
-    }
+  &:hover {
+    background-color: var(--btn-primary-blue);
+    border: 1px solid var(--btn-primary-blue);
+    color: var(--btn-primary-hover);
+  }
 }
 
 .btn-secondary.btn-loading {
-    &:hover {
-        background-color: var(--btn-primary-hover);
-    }
+  &:hover {
+    background-color: var(--btn-primary-hover);
+  }
 }
