@@ -65,6 +65,32 @@ Example usage:
 // inside a functional component
 const {theme, toggle} = useTheme();
 ```
+Below are the colors used for each component and it's states:
+``` scss
+  --btn-primary-blue: rgb(0, 90, 205);
+  --btn-primary-hover: rgb(255, 255, 255);
+  --btn-secondary-bg: rgb(255, 255, 255);
+  --btn-secondary-border: rgb(0, 191, 70);
+  --btn-secondary-hover-bg: rgb(0, 200, 0);
+  --btn-secondary-hover-text: rgb(255, 255, 255);
+  --btn-underline-border: rgb(63, 136, 152);
+  --btn-underline-hover: rgb(206, 89, 0);
+  --btn-disabled-bg: rgb(180, 180, 180);
+  --btn-disabled-text: rgb(255, 255, 255);
+  --btn-disabled-border: rgb(102, 95, 95);
+  --input-wrapper-border: rgb(180, 180, 180);
+  --input-wrapper-focus: rgb(0, 90, 205);
+  --input-wrapper-error: rgb(255, 10, 10);
+  --input-wrapper-bg: rgb(255, 255, 255);
+  --input-text: rgb(0, 0, 0);
+  --label-inactive: rgb(180, 180, 180);
+  --dots-middle: rgb(0, 0, 0);
+  --dots-outer: rgb(50, 50, 50);
+  --spiner-top-border: rgb(0, 0, 0);
+  --spinner-bg: rgb(100, 100, 100);
+``` 
+When you implement light/dark themes I highly suggest you override these variables to your liking.
+
 
 
 ### How to use the library
@@ -82,3 +108,4 @@ Instead how I suggest you use it is as follows:
 1. Run `npm link ui-design-system`
 2. Import whichever component you need as follows:
 `import {Button, Input, ThemeProvider, ButtonEnum, LoaderEnum, useTheme} from "ui-design-system"` 
+
