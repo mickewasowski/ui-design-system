@@ -20,7 +20,7 @@
     color: var(--input-wrapper-error);
     font-size: 10px;
     position: absolute;
-    top: -1%;
+    top: 50%;
     left: 10px;
   }
 
@@ -56,5 +56,13 @@
 
   label.label-at-top-focused {
     color: var(--input-wrapper-focus);
+  }
+
+  &.error-wrapper {
+
+    label.label-at-top-focused,
+    label.label-at-top {
+      color: var(--input-wrapper-error);
+    }
   }
 }
