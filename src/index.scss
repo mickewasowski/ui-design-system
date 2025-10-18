@@ -1,14 +1,22 @@
 :root {
-    --white: rgb(255, 255, 255);
-    --black: rgb(0, 0, 0);
-    --grayish-white: rgb(180, 180, 180);
-    --gray: rgb(102, 95, 95);
-    --blue: rgb(0, 90, 205);
-    --blueish-white: rgb(188, 206, 245);
-    --green: rgb(0, 206, 17);
-    --navy: rgb(25, 41, 70);
-    --copper: rgb(206, 89, 0);
-    --dark-purple: rgb(38, 6, 142);
-    --pastel-light-blue: rgb(63, 136, 152);
-    --error-red: rgb(255, 10, 10);
+    --btn-primary-blue: rgb(0, 90, 205);
+    --btn-primary-hover: rgb(255, 255, 255);
+    --btn-secondary-bg: rgb(255, 255, 255);
+    --btn-secondary-border: rgb(25, 41, 70);
+    --btn-secondary-hover-bg: rgb(180, 180, 180);
+    --btn-underline-border: rgb(63, 136, 152);
+    --btn-underline-hover: rgb(206, 89, 0);
+    --btn-disabled-bg: rgb(180, 180, 180);
+    --btn-disabled-text: rgb(255, 255, 255);
+    --btn-disabled-border: rgb(102, 95, 95);
+    --input-wrapper-border: rgb(180, 180, 180);
+    --input-wrapper-focus: rgb(0, 90, 205);
+    --input-wrapper-error: rgb(255, 10, 10);
+    --input-wrapper-bg: rgb(255, 255, 255);
+    --input-text: rgb(0, 0, 0);
+    --label-inactive: rgb(180, 180, 180);
+    --dots-middle: rgb(0, 0, 0);
+    --dots-outer: rgb(50, 50, 50);
+    --spiner-top-border: rgb(0, 0, 0);
+    --spinner-bg: rgb(100, 100, 100);
 }

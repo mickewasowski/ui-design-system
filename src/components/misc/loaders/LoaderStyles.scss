@@ -1,8 +1,8 @@
 .loading-spinner {
     width: 50px;
     height: 50px;
-    border: calc(50px / 5) solid #dddddd; 
-    border-top-color: black;
+    border: calc(50px / 5) solid var(--spinner-bg); 
+    border-top-color: var(--spiner-top-border);
     border-radius: 50%;
     box-sizing: border-box;
     animation: loading 0.75s ease infinite;
@@ -29,16 +29,16 @@
         animation: jump 0.6s infinite alternate;
 
         &:nth-child(1) {
-            background-color: darkgray;
+            background-color: var(--dots-outer);
         }
 
         &:nth-child(2) {
-            background-color: black;
+            background-color: var(--dots-middle);
             animation-delay: 0.2s;
         }
 
         &:nth-child(3) {
-            background-color: darkgray;
+            background-color: var(--dots-outer);
             animation-delay: 0.4s;
         }
     }

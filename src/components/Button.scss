@@ -18,44 +18,44 @@
 }
 
 .btn-primary {
-    background-color: var(--blue);
-    border: 1px solid var(--blue);
+    background-color: var(--btn-primary-blue);
+    border: 1px solid var(--btn-primary-blue);
     color: var(--white);
 
     &:hover {
-        background-color: var(--white);
-        color: var(--blue);
-        border: 1px solid var(--blue);
+        background-color: var(--btn-primary-hover);
+        color: var(--btn-primary-blue);
+        border: 1px solid var(--btn-primary-blue);
     }
 }
 
 
 .btn-secondary {
-    background-color: var(--white);
+    background-color: var(--btn-secondary-bg);
     text-transform: capitalize;
-    border: 1px solid var(--navy);
-    color: var(--navy);
+    border: 1px solid var(--btn-secondary-border);
+    color: var(--btn-secondary-border);
 
     &:hover {
-        background-color: var(--grayish-white);
+        background-color: var(--btn-secondary-hover-bg);
     }
 }
 
 .btn-underline {
     border-radius: 0;
-    border-bottom: 1px solid var(--pastel-light-blue);
-    color: var(--pastel-light-blue);
+    border-bottom: 1px solid var(--btn-underline-border);
+    color: var(--btn-underline-border);
 
     &:hover {
-        border-color: var(--copper);
-        color: var(--copper);
+        border-color: var(--btn-underline-hover);
+        color: var(--btn-underline-hover);
     }
 }
 
 .btn-disabled {
-    background-color: var(--grayish-white);
-    color: var(--white);
-    border: 1px solid var(--gray);
+    background-color: var(--btn-disabled-bg);
+    color: var(--btn-disabled-text);
+    border: 1px solid var(--btn-disabled-border);
 
     &:hover {
         cursor: not-allowed;
@@ -73,14 +73,14 @@
 
 .btn-primary.btn-loading {
     &:hover {
-        background-color: var(--blue);
-        border: 1px solid var(--blue);
-        color: var(--white);
+        background-color: var(--btn-primary-blue);
+        border: 1px solid var(--btn-primary-blue);
+        color: var(--btn-primary-hover);
     }
 }
 
 .btn-secondary.btn-loading {
     &:hover {
-        background-color: var(--white);
+        background-color: var(--btn-primary-hover);
     }
 }

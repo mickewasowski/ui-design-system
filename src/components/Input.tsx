@@ -27,7 +27,7 @@ interface IInputProps {
   };
 }
 
-function Input({
+export const Input = ({
   input,
   label,
   borderColor,
@@ -36,9 +36,13 @@ function Input({
     show: false,
     text: "",
   },
-}: IInputProps) {
+}: IInputProps) => {
   const { type, value, changeHandler, attributes = {} } = input;
-  const { onFocus: userOnFocus, onBlur: userOnBlur, ...restAttributes } = attributes;
+  const {
+    onFocus: userOnFocus,
+    onBlur: userOnBlur,
+    ...restAttributes
+  } = attributes;
   const { text, name } = label;
   const { show: showError, text: errorText } = error;
 
@@ -48,23 +52,25 @@ function Input({
     setFocused(true);
 
     if (userOnFocus) userOnFocus(event);
-  }
+  };
   const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
     setFocused(false);
 
     if (userOnBlur) userOnBlur(event);
-  }
-
-  const wrapperClasses = classNames(
-    "input-label-wrapper",
-    focused && "focus-wrapper",
-    showError && "error-wrapper",
-  );
+  };
 
   const hasValue = Boolean(
     (typeof value === "string" && value.length > 0) ||
     (typeof value === "number" && !isNaN(value)),
   );
+
+  const wrapperClasses = classNames(
+    "input-label-wrapper",
+    focused && "focus-wrapper",
+    hasValue && "has-value",
+    showError && "error-wrapper",
+  );
+
   const labelClasses = classNames(
     hasValue && "label-at-top",
     focused && "label-at-top-focused",
@@ -94,6 +100,4 @@ function Input({
       </label>
     </div>
   );
-}
-
-export default Input;
+};

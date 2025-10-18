@@ -1,21 +1,23 @@
 .input-label-wrapper {
-  min-height: 40px;
-  min-width: 70px;
-  border: 1px solid var(--grayish-white);
+  display: inline-block;
+  min-height: 30px;
+  min-width: 60px;
+  border: 1px solid var(--input-wrapper-border);
   border-radius: 6px;
   position: relative;
-  padding: 12px;
+  padding: 8px;
+  background-color: var(--input-wrapper-bg);
 
   &.focus-wrapper {
-    border-color: var(--blue);
+    border-color: var(--input-wrapper-focus);
   }
 
   &.error-wrapper {
-    border-color: var(--error-red);
+    border-color: var(--input-wrapper-error);
   }
 
   .error-text {
-    color: var(--error-red);
+    color: var(--input-wrapper-error);
     font-size: 10px;
     position: absolute;
     top: -1%;
@@ -29,19 +31,19 @@
     width: 100%;
     height: 95%;
     font: inherit;
-    color: var(--black);
+    color: var(--input-text);
     padding: 8px 0 0;
   }
 
   label {
     position: absolute;
-    left: 12px;
+    left: 5%;
     top: 50%;
-    transform: translate(-50%);
+    transform: translate(0, -50%);
     background: inherit;
     padding: 0 4px;
     pointer-events: none;
-    color: var(--grayish-white);
+    color: var(--label-inactive);
   }
 
   label.label-at-top-focused,
@@ -49,10 +51,11 @@
     top: 0;
     left: 8px;
     font-size: 10px;
-    color: var(--grayish-white);
+    color: var(--label-inactive);
+    background-color: var(--input-wrapper-bg);
   }
 
   label.label-at-top-focused {
-    color: var(--blue);
+    color: var(--input-wrapper-focus);
   }
 }
